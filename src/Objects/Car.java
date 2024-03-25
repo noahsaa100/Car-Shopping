@@ -1,5 +1,7 @@
 package Objects;
 
+import java.text.DecimalFormat;
+
 public class Car {
     private String Make;
     private String Model;
@@ -15,10 +17,11 @@ public class Car {
 
     @Override
     public String toString() {
+        DecimalFormat df = new DecimalFormat("#.00");
         return "Car: " +
                 "Make: " + Make + '\'' +
                 ", Model: '" + Model + '\'' +
                 ", Year: " + Year +
-                ", Price: " + Price;
+                ", Price: " + df.format(Price);
     }
 }
