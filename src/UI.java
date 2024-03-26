@@ -74,7 +74,7 @@ public class UI  {
             Shops shop = shopsList.get(i);
             if (shop instanceof CarShop) {
                 carShopIndex++;
-                System.out.println((carShopIndex + 1)+". " + shopsList.get(i).getName());
+                System.out.println((carShopIndex )+". " + shopsList.get(i).getName());
             }
         }
     }
@@ -87,7 +87,7 @@ public class UI  {
             Shops shop = shopsList.get(i);
             if (shop instanceof GarageShop) {
                 garageIndex++;
-                System.out.println((garageIndex + 1)+". " + shop.getName());
+                System.out.println((garageIndex )+". " + shop.getName());
             }
         }
     }
