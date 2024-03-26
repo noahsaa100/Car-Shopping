@@ -26,9 +26,9 @@ public class User {
         return garagesOwned;
     }
 
-
-
-
+    public void setGaragesOwned(List<Garage> garagesOwned) {
+        this.garagesOwned = garagesOwned;
+    }
 
     public String getName() {
         return Name;
