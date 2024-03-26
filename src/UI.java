@@ -44,6 +44,7 @@ public class UI  {
             switch (choice) {
                 case 1:
                     ui.shopMenu();
+                    break;
             }
         }
     }
@@ -59,6 +60,7 @@ public class UI  {
                     break;
                 case 2:
                     ui.displayGarageShops();
+                    break;
             }
         }
     }
@@ -98,6 +100,7 @@ public class UI  {
         } catch (NumberFormatException e) {
             System.out.println("Invalid input - Please choose a valid number");
             return false;
+
         }
     }
 
