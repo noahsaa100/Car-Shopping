@@ -53,4 +53,8 @@ public class User {
                 "Name: " + Name  +
                 ", Balance: " + df.format(Balance);
     }
+
+    public void addGarage(Garage garage){
+        garagesOwned.add(garage);
+    }
 }

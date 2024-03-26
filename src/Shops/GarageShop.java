@@ -1,6 +1,8 @@
 package Shops;
 
+import Objects.Car;
 import Objects.Garage;
+import Objects.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -39,6 +41,23 @@ public class GarageShop {
         for (int i = 0; i < garageList.size(); i++) {
             System.out.println((i + 1) + ". " + garageList.get(i));
         }
+    }
+
+    /* Buys garage and adds to users garage list
+     */
+    public void buyGarage(User user, int index) {
+        if (index < 0 || index > garageList.size()) {
+            System.out.println("Invalid Choice. ");
+            return;
+        }
+        Garage garage = garageList.get(index - 1);
+        if (user.getBalance() < garage.getGaragePrice()) {
+            System.out.println("Insufficient Funds. ");
+            return;
+        }
+        user.setBalance(user.getBalance() - garage.getGaragePrice());
+        garageList.remove(garage);
+        user.addGarage(garage);
     }
 }
 
