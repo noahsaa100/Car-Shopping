@@ -19,16 +19,20 @@ import java.util.List;
 /**
  * Represents a shop where users can buy garages.
  */
-public class GarageShop {
+public class GarageShop implements Shops {
     // List of garages available in the shop
     List<Garage> garageList = new ArrayList<>();
+    private String name;
+
+
 
     /**
      * Constructs a garage shop by loading garages from a CSV file.
      * @param filename the name of the CSV file containing garage information
      */
-    public GarageShop(String filename) {
+    public GarageShop(String name, String filename) {
         loadGaragesFromFile(filename);
+        this.name = name;
     }
 
     /**
@@ -54,7 +58,7 @@ public class GarageShop {
     /**
      * Displays the available garages in the garage shop.
      */
-    public void displayAvailableGarages() {
+    public void displayAvailableItems() {
         System.out.println("Available Garages:");
         for (int i = 0; i < garageList.size(); i++) {
             System.out.println((i + 1) + ". " + garageList.get(i));
@@ -66,7 +70,7 @@ public class GarageShop {
      * @param user the user who is buying the garage
      * @param index the index of the garage to be bought
      */
-    public void buyGarage(User user, int index) {
+    public void buyItem(User user, int index) {
         if (index < 0 || index > garageList.size()) {
             System.out.println("Invalid Choice. ");
             return;
@@ -79,6 +83,14 @@ public class GarageShop {
         user.setBalance(user.getBalance() - garage.getGaragePrice());
         garageList.remove(garage);
         user.addGarage(garage);
+    }
+    //Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
 

@@ -18,16 +18,18 @@ import java.util.List;
 /**
  * Represents a car shop where users can buy cars.
  */
-public class CarShop {
+public class CarShop implements Shops {
     // List of cars in the car shop
     List<Car> carShop = new ArrayList<>();
+    private String name;
 
     /**
      * Constructs a car shop by loading cars from a CSV file.
      * @param filename the name of the CSV file containing car information
      */
-    public CarShop(String filename) {
+    public CarShop(String name, String filename) {
         loadCarsFromFile(filename);
+        this.name = name;
     }
 
     /**
@@ -54,7 +56,7 @@ public class CarShop {
     /**
      * Displays the available cars in the car shop.
      */
-    public void displayAvailableCars() {
+    public void displayAvailableItems() {
         System.out.println("Available Cars:");
         for (int i = 0; i < carShop.size(); i++) {
             System.out.println((i + 1) + ". " + carShop.get(i));
@@ -66,7 +68,7 @@ public class CarShop {
      * @param user the user who is buying the car
      * @param index the index of the car to be bought
      */
-    public void buyCar(User user, int index) {
+    public void buyItem(User user, int index) {
         if (index < 0 || index > carShop.size()) {
             System.out.println("Invalid Choice. ");
             return;
@@ -83,6 +85,16 @@ public class CarShop {
             carShop.remove(car);
             System.out.println(user.getName() + " has just bought a " + car.getYear() + " " + car.getMake() + " " + car.getModel() + " for " + car.getPrice());
         }
+    }
+
+    // Getters and Setters
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
 
