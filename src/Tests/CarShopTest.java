@@ -16,5 +16,6 @@ public class CarShopTest {
         garageShop1.displayAvailableGarages();
         carShop1.displayAvailableCars(); // Show Car has been bought and removed from list
         System.out.println(user.toString()); // Show Users balance decreased
+
     }
 }
