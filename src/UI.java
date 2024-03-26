@@ -57,6 +57,8 @@ public class UI  {
                 case 1:
                     ui.displayCarShops();
                     break;
+                case 2:
+                    ui.displayGarageShops();
             }
         }
     }
@@ -67,19 +69,25 @@ public class UI  {
     }
     public void displayCarShops() {
         System.out.println("Car Shops:");
+        int carShopIndex = 0;
         for (int i = 0; i < shopsList.size(); i++) {
             Shops shop = shopsList.get(i);
             if (shop instanceof CarShop) {
-                System.out.println((i + 1)+". " + shopsList.get(i).getName());
+                carShopIndex++;
+                System.out.println((carShopIndex + 1)+". " + shopsList.get(i).getName());
             }
         }
     }
 
+
     public void displayGarageShops() {
         System.out.println("Garage Shops:");
-        for (Shops shop : shopsList) {
+        int garageIndex = 0;
+        for (int i = 0; i < shopsList.size(); i++) {
+            Shops shop = shopsList.get(i);
             if (shop instanceof GarageShop) {
-                shop.displayAvailableItems();
+                garageIndex++;
+                System.out.println((garageIndex + 1)+". " + shop.getName());
             }
         }
     }
