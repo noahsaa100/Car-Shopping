@@ -16,8 +16,8 @@ public class GarageTest {
         garage.addCar(car);
         System.out.println(garage.getCarsInGarage());
 
-        GarageShop garageShop1 = new GarageShop("C:\\Users\\noahs\\OneDrive\\Documents\\computing\\Mini java games\\ShoppingGame\\src\\Shops\\GarageShop.csv");
-        garageShop1.buyGarage(user, 1);
+        GarageShop garageShop1 = new GarageShop("The garage shop", "C:\\Users\\noahs\\OneDrive\\Documents\\computing\\Mini java games\\ShoppingGame\\src\\Shops\\GarageShop.csv");
+        garageShop1.buyItem(user, 1);
 
     }
 
