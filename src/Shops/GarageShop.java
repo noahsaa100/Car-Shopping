@@ -9,13 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GarageShop {
+    // Create a list of garages
      List<Garage> garageList = new ArrayList<>();
 
 
     public GarageShop(String filename) {
         loadGaragesFromFile(filename);
     }
-
+    // Load garages from csv
     private void loadGaragesFromFile(String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
@@ -25,7 +26,7 @@ public class GarageShop {
                 String garageName = parts[0].trim();
                 int garageCapacity = Integer.parseInt(parts[1].trim());
                 double garagePrice = Double.parseDouble(parts[2].trim());
-
+                // Add garages to list
                 garageList.add(new Garage(garageName, garageCapacity, garagePrice));
             }
         } catch (IOException e) {
