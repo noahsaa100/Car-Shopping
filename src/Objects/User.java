@@ -1,6 +1,7 @@
 package Objects;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -8,12 +9,13 @@ public class User {
     private double Balance;
     private boolean ownsGarage;
     private List<Garage> garagesOwned;
-
+    public User(String name, double balance) {
+        this.Name = name;
+        this.Balance = balance;
+        this.garagesOwned = new ArrayList<>();
+    }
     public boolean isOwnsGarage() {
-        if(!garagesOwned.isEmpty()){
-            return true;
-        }
-        return false;
+        return !garagesOwned.isEmpty();
     }
 
     public void setOwnsGarage(boolean ownsGarage) {
@@ -26,11 +28,6 @@ public class User {
 
     public void setGaragesOwned(List<Garage> garagesOwned) {
         this.garagesOwned = garagesOwned;
-    }
-
-    public User(String name, double balance) {
-        this.Name = name;
-        this.Balance = balance;
     }
 
     public String getName() {
@@ -55,5 +52,9 @@ public class User {
         return "User: " +
                 "Name: " + Name  +
                 ", Balance: " + df.format(Balance);
+    }
+
+    public void addGarage(Garage garage){
+        garagesOwned.add(garage);
     }
 }

@@ -60,6 +60,7 @@ public class CarShop {
             user.setBalance(user.getBalance() - car.getPrice());
             carShop.remove(car);
             System.out.println(user.getName() + " has just bought a " + car.getYear() + " " + car.getMake() + " " + car.getModel() + " for" + car.getPrice());
+
         }
     }
 }
