@@ -9,11 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GarageShop {
-    private List<Garage> garageList;
+     List<Garage> garageList = new ArrayList<>();
 
 
     public GarageShop(String filename) {
-        List<Garage> garageList = new ArrayList<>();
         loadGaragesFromFile(filename);
     }
 
@@ -35,7 +34,7 @@ public class GarageShop {
     }
 
     public void displayAvailableGarages() {
-        System.out.println("Available Cars:");
+        System.out.println("Available Garages:");
         for (int i = 0; i < garageList.size(); i++) {
             System.out.println((i + 1) + ". " + garageList.get(i));
         }
